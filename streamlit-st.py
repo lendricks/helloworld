@@ -4,12 +4,19 @@ import pandas as pd
 import streamlit as st
 from datetime import time, datetime
 
-st.header('st.slider')
+st.header('Select Box')
 
 if st.button('Say hello'):
     st.write('Hello, *World!* :sunglasses:')
 else:
     st.write('Goodbye')
+
+# SELECT BOX
+option = st.selectbox(
+    'What is your favorite color?',
+    ('Blue', 'Red', 'Green')
+)
+st.write('Your favorite color is ', option)
 
 # LINE CHART
 chart_data = pd.DataFrame(
@@ -67,4 +74,5 @@ c = alt.Chart(df2).mark_circle().encode(
 )
 
 st.write(c)
+
 
