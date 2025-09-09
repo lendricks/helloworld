@@ -2,16 +2,24 @@ import numpy as np
 import altair as alt
 import pandas as pd
 import streamlit as st
-
 from datetime import time, datetime
 
 st.header('st.slider')
-st.subheader('Slider')
 
 if st.button('Say hello'):
     st.write('Hello, *World!* :sunglasses:')
 else:
     st.write('Goodbye')
+
+# LINE CHART
+chart_data = pd.DataFrame(
+    np.random.randn(20, 3),
+    columns=['a', 'b', 'c']
+)
+st.line_chart(chart_data)
+
+# SLIDERS
+st.subheader('Slider')
 
 age = st.slider('How old are you?', 0, 130, 25)
 st.write("I'm ", age, "years old")
@@ -41,7 +49,7 @@ start_time = st.slider(
 )
 st.write("Start time:", start_time)
 
-
+# PANDA DATAFRAME
 df = pd.DataFrame({
     'first column': [1, 2, 3, 4],
     'second column': [10, 20, 30, 40]
@@ -59,3 +67,4 @@ c = alt.Chart(df2).mark_circle().encode(
 )
 
 st.write(c)
+
