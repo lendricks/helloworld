@@ -4,12 +4,20 @@ import pandas as pd
 import streamlit as st
 from datetime import time, datetime
 
-st.header('Select Box')
+st.header('Multiselect')
 
 if st.button('Say hello'):
     st.write('Hello, *World!* :sunglasses:')
 else:
     st.write('Goodbye')
+
+# MULTISELECT
+options = st.multiselect(
+    'What are your favorite colors?',
+    ['Green', 'Yellow', 'Red', 'Blue'],
+    ['Yellow', 'Red'],
+)
+st.write('You selected:', options)
 
 # SELECT BOX
 option = st.selectbox(
@@ -74,5 +82,6 @@ c = alt.Chart(df2).mark_circle().encode(
 )
 
 st.write(c)
+
 
 
