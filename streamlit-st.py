@@ -15,13 +15,13 @@ else:
 st.write('What would you like to order?')
 
 icecream = st.checkbox('Ice Cream')
-coffee = st.checkbox('Coffee')
+tomato = st.checkbox('Tomato')
 cola = st.checkbox('Cola')
 
 if icecream:
     st.write("Here's your :icecream:")
-if coffee:
-    st.write("Here's your :coffee:")
+if tomato:
+    st.write("Here's your :tomato:")
 if cola:
     st.write("Here's your :cup_with_straw:")
 
@@ -96,6 +96,7 @@ c = alt.Chart(df2).mark_circle().encode(
 )
 
 st.write(c)
+
 
 
 
