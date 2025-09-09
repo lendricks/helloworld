@@ -4,12 +4,26 @@ import pandas as pd
 import streamlit as st
 from datetime import time, datetime
 
-st.header('Multiselect')
+st.header('Checkbox')
 
 if st.button('Say hello'):
     st.write('Hello, *World!* :sunglasses:')
 else:
     st.write('Goodbye')
+
+# CHECKBOX
+st.write('What would you like to order?')
+
+icecream = st.checkbox('Ice Cream')
+coffee = st.checkbox('Coffee')
+cola = st.checkbox('Cola')
+
+if icecream:
+    st.write("Here's your :icecream:")
+if coffee:
+    st.write("Here's your :coffee:")
+if cola:
+    st.write("Here's your :cup_with_straw:")
 
 # MULTISELECT
 options = st.multiselect(
@@ -82,6 +96,7 @@ c = alt.Chart(df2).mark_circle().encode(
 )
 
 st.write(c)
+
 
 
 
