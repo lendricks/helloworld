@@ -4,12 +4,19 @@ import pandas as pd
 import streamlit as st
 from datetime import time, datetime
 
-st.header('Checkbox')
+st.header('Latex')
 
 if st.button('Say hello'):
     st.write('Hello, *World!* :sunglasses:')
 else:
     st.write('Goodbye')
+
+# LATEX
+st.latex(r'''
+        a + ar + a r^2 + a r^3 + \cdots + a r^{n-1} =
+        \sum_{k=0}^{n-1} ar^k =
+        a \left(\frac{1-r^{n}}{1-r}\right)
+''')
 
 # CHECKBOX
 st.write('What would you like to order?')
@@ -96,6 +103,7 @@ c = alt.Chart(df2).mark_circle().encode(
 )
 
 st.write(c)
+
 
 
 
